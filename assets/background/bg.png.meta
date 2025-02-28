@@ -1,0 +1,42 @@
+{
+  "ver": "1.0.25",
+  "importer": "image",
+  "imported": true,
+  "uuid": "a26768e5-797c-47d7-8ba0-9038c090a38a",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "3c318": {
+      "importer": "texture",
+      "uuid": "a26768e5-797c-47d7-8ba0-9038c090a38a@3c318",
+      "displayName": "bg",
+      "id": "3c318",
+      "name": "normalMap",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a26768e5-797c-47d7-8ba0-9038c090a38a"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "fixAlphaTransparencyArtifacts": true,
+    "hasAlpha": true,
+    "type": "normal map",
+    "redirect": "a26768e5-797c-47d7-8ba0-9038c090a38a@3c318",
+    "flipGreenChannel": false
+  }
+}
