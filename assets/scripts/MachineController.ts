@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec3, input, Input, EventKeyboard, KeyCode } from 'cc';
+import { _decorator, Component, Node, Vec3, input, Input, EventKeyboard, KeyCode, CCFloat } from 'cc';
 import { Joystick } from './Joystick'; // Импортируем класс Joystick
 const { ccclass, property } = _decorator;
 
@@ -7,7 +7,7 @@ export class MachineController extends Component {
     @property(Node)
     joystickNode: Node = null; // Узел, содержащий компонент Joystick
     
-    @property()
+    @property({ type: CCFloat })
     private maxspeed: number = 35;
 
     private speed: number = 0; // Постоянная скорость машины
@@ -28,7 +28,7 @@ export class MachineController extends Component {
 
     update(deltaTime: number) {
         // Обновляем время последнего кадра
-        const currentTime = performance.now();
+       const currentTime = performance.now();
         const frameTime = currentTime - this.lastFrameTime;
         this.lastFrameTime = currentTime;
 

@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Vec2, EventTouch, v2, Vec3, Sprite, Color } from 'cc';
 import { MachineCrashController } from './MachineCrashController'; // убедитесь, что путь правильный
+import { StartAnimationController } from './StartAnimationController'; // Импортируйте ваш контроллер анимации
 const { ccclass, property } = _decorator;
 
 @ccclass('Joystick')
@@ -12,6 +13,8 @@ export class Joystick extends Component {
 
     @property(Node)
     nodeToRemove: Node = null; // Узел, который нужно удалить при поломке машины
+    @property(StartAnimationController)
+    startAnimationController: StartAnimationController = null;
 
     private _startPos: Vec2 = v2(0, -120);
     private _radius: number = 7; // Радиус области джойстика
@@ -27,7 +30,12 @@ export class Joystick extends Component {
 
     onTouchStart(event: EventTouch) {
         this._startPos = event.getLocation();
-        this.stick.setPosition(this.node.position); // Установка рычага в центр
+        //this.stick.setPosition(this.node.position); // Установка рычага в центр
+
+        if (this.startAnimationController) {
+
+            this.startAnimationController.setIsRunning(false); // Останавливаем анимацию
+        }
     }
 
     onTouchMove(event: EventTouch) {
@@ -52,7 +60,7 @@ export class Joystick extends Component {
     }
 
     onTouchEnd() {
-        this.stick.setPosition(this.node.position); // Возврат рычага в центр
+        //this.stick.setPosition(this.node.position); // Возврат рычага в центр
         this._direction = v2(0, 0); // Сбрасываем направление
     }
 
